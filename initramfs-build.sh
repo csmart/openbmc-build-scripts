@@ -68,8 +68,8 @@ EOF_BUILDROOT
 
 # Build buildroot
 export BR2_DL_DIR=${HOME}/buildroot_downloads
-make powerpc64_openpower_defconfig
-make
+make powerpc64_openpower_defconfig || exit 1
+make || exit 1
 
 EOF_SCRIPT
 
