@@ -113,7 +113,7 @@ export http_proxy=${http_proxy}
 export https_proxy=${http_proxy}
 export ftp_proxy=${http_proxy}
 
-cd \"${WORKSPACE}\"
+cd "${WORKSPACE}"
 
 # Go into the linux directory (the script will put us in a build subdir)
 cd buildroot && make clean
@@ -123,7 +123,7 @@ cat >> configs/powerpc64${ENDIANESS}_openpower_defconfig << EOF_BUILDROOT
 BR2_powerpc64${ENDIANESS}=y
 BR2_TARGET_ROOTFS_CPIO=y
 BR2_TARGET_ROOTFS_CPIO_XZ=y
-BR2_TARGET_GENERIC_GETTY_PORT=\"hvc0\"
+BR2_TARGET_GENERIC_GETTY_PORT="hvc0"
 BR2_GLIBC_VERSION_2_22=y
 BR2_TARGET_ROOTFS_TAR=n
 BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
@@ -131,7 +131,7 @@ BR2_SYSTEM_BIN_SH_BASH=y
 EOF_BUILDROOT
 
 # Build buildroot
-export BR2_DL_DIR=\"${HOME}/buildroot_downloads\"
+export BR2_DL_DIR="${HOME}/buildroot_downloads"
 make powerpc64${ENDIANESS}_openpower_defconfig
 make
 
