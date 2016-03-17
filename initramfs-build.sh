@@ -73,6 +73,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -yy \
 	bc \
 	build-essential \
+	ccache \
 	cpio \
 	git \
 	python \
@@ -128,6 +129,7 @@ BR2_GLIBC_VERSION_2_22=y
 BR2_TARGET_ROOTFS_TAR=n
 BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
 BR2_SYSTEM_BIN_SH_BASH=y
+BR2_CCACHE=y
 EOF_BUILDROOT
 
 # Build buildroot
