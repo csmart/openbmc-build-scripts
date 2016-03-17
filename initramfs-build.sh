@@ -149,7 +149,7 @@ docker run \
 	-e WORKSPACE="${WORKSPACE}" \
 	--user="${USER}" \
 	-w "${HOME}" \
-	-v "${HOME}":"${HOME}":Z \
+	-v "${HOME}":"${HOME}" \
 	-t initramfs-build/ubuntu \
 	"${WORKSPACE}/build.sh"
 
