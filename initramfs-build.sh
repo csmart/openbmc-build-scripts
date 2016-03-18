@@ -15,6 +15,7 @@ set -o nounset
 WORKSPACE=${WORKSPACE:-${HOME}/${RANDOM}${RANDOM}}
 http_proxy=${http_proxy:-}
 ENDIANESS=${ENDIANESS:-le}
+PROXY=""
 
 usage(){
 	cat << EOF_USAGE
