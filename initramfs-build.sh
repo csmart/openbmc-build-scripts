@@ -65,6 +65,7 @@ BR2_powerpc64le=y
 BR2_TARGET_ROOTFS_CPIO=y
 BR2_TARGET_ROOTFS_CPIO_XZ=y
 BR2_TARGET_GENERIC_GETTY_PORT="hvc0"
+${BUILDROOT_EXTRA_CONFIG}
 EOF_BUILDROOT
 
 # Build buildroot
@@ -78,6 +79,7 @@ chmod a+x ${WORKSPACE}/build.sh
 
 # Run the docker container, execute the build script we just built
 docker run --cap-add=sys_admin --net=host --rm=true -e WORKSPACE=${WORKSPACE} --user="${USER}" \
+  -e BUILDROOT_EXTRA_CONFIG="${BUILDROOT_EXTRA_CONFIG}" \
   -w "${HOME}" -v "${HOME}":"${HOME}" -t initramfs-build/ubuntu ${WORKSPACE}/build.sh
 
 # Timestamp for build
